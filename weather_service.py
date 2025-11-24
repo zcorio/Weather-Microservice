@@ -34,22 +34,7 @@ def get_weather():
             'available_cities': list(WEATHER_DATA.keys())
         }), 404
     
-    # Generate random weather data
-    city_data = WEATHER_DATA[city]
-    temperature = random.randint(city_data['temp_range'][0], city_data['temp_range'][1])
-    condition = random.choice(city_data['conditions'])
-    humidity = random.randint(30, 90)
-    wind_speed = random.randint(0, 25)
-    
-    weather_info = {
-        'city': city,
-        'temperature': temperature,
-        'temperature_unit': 'Fahrenheit',
-        'condition': condition,
-        'humidity': f'{humidity}%',
-        'wind_speed': f'{wind_speed} mph',
-        'timestamp': datetime.now().isoformat()
-    }
+    weather_info = generate_weather_data(city)
     
     return jsonify(weather_info), 200
 
@@ -76,6 +61,22 @@ def home():
         'example': '/weather?city=New York'
     }), 200
 
+def generate_weather_data(city):
+    city_data = WEATHER_DATA[city]
+    temperature = random.randint(city_data['temp_range'][0], city_data['temp_range'][1])
+    condition = random.choice(city_data['conditions'])
+    humidity = random.randint(30, 90)
+    wind_speed = random.randint(0, 25)
+    
+    return {
+        'city': city,
+        'temperature': temperature,
+        'temperature_unit': 'Fahrenheit',
+        'condition': condition,
+        'humidity': f'{humidity}%',
+        'wind_speed': f'{wind_speed} mph',
+        'timestamp': datetime.now().isoformat()
+    }
 
 if __name__ == '__main__':
     print("Starting Weather Microservice on port 5055...")
