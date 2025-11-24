@@ -5,7 +5,6 @@ BASE_URL = 'http://localhost:5055'
 
 
 def test_home_endpoint():
-    """Test the home endpoint"""
     print("\n" + "="*50)
     print("Testing Home Endpoint")
     print("="*50)
@@ -21,7 +20,6 @@ def test_home_endpoint():
 
 
 def test_get_cities():
-    """Test getting available cities"""
     print("\n" + "="*50)
     print("Testing Get Cities Endpoint")
     print("="*50)
@@ -37,7 +35,6 @@ def test_get_cities():
 
 
 def test_get_weather_valid_city():
-    """Test getting weather for a valid city"""
     print("\n" + "="*50)
     print("Testing Get Weather - Valid City (New York)")
     print("="*50)
@@ -53,7 +50,6 @@ def test_get_weather_valid_city():
 
 
 def test_get_weather_invalid_city():
-    """Test getting weather for an invalid city"""
     print("\n" + "="*50)
     print("Testing Get Weather - Invalid City (Mars)")
     print("="*50)
@@ -69,7 +65,6 @@ def test_get_weather_invalid_city():
 
 
 def test_get_weather_missing_parameter():
-    """Test getting weather without city parameter"""
     print("\n" + "="*50)
     print("Testing Get Weather - Missing Parameter")
     print("="*50)
@@ -85,7 +80,6 @@ def test_get_weather_missing_parameter():
 
 
 def test_multiple_cities():
-    """Test getting weather for multiple cities"""
     print("\n" + "="*50)
     print("Testing Multiple Cities")
     print("="*50)
@@ -111,7 +105,6 @@ def test_multiple_cities():
 
 
 def run_all_tests():
-    """Run all tests"""
     print("\n" + "="*70)
     print("WEATHER MICROSERVICE TEST SUITE")
     print("="*70)

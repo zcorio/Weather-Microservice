@@ -17,7 +17,6 @@ WEATHER_DATA = {
 @app.route('/weather', methods=['GET'])
 def get_weather():
     """
-    Get weather data for a specified city.
     Query parameter: city (required)
     Example: /weather?city=New York
     """
@@ -57,9 +56,6 @@ def get_weather():
 
 @app.route('/weather/cities', methods=['GET'])
 def get_cities():
-    """
-    Get list of available cities.
-    """
     return jsonify({
         'available_cities': list(WEATHER_DATA.keys())
     }), 200
